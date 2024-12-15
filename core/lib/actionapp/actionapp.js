@@ -3537,6 +3537,10 @@ window.ActionAppCore = window.ActionAppCore || ActionAppCore;
                                 tmpGridCount = tmpMaxGrids;
                             }
 
+                            if( tmpGridCount == 0 ){
+                                tmpGridCount = 1;
+                            }
+                            //--- Make it an option
                             //=== Example of a way to help with dangling single value
                             //   if (tmpCurrGrids == 4 && tmpGridCount == 3) {
                             //     if (tmpIW < 800) {
