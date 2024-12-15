@@ -3375,12 +3375,7 @@ window.ActionAppCore = window.ActionAppCore || ActionAppCore;
         }, 200),
 
         minCardSizeSm: 250,
-        //minCardSize: 350,
-        //maxCardSizeSm: 365,
-        //maxCardSize: 999,
-        //currentCardCount: 0,
-        //cutOffSmall: 668,
-        //cutOffLarge: 9999,
+   
 
         resizeLayoutProcess: function (theForce) {
             try {
@@ -3388,91 +3383,6 @@ window.ActionAppCore = window.ActionAppCore || ActionAppCore;
                 this.resizeGrid();
                 this.resizeAutoGrid();
                 this.resizeAutoGrid(theForce,'cards');
-                return;
-                var tmpCardCount = 4;
-                var tmpCards = ThisApp.getByAttr$({ "auto-adapt": "cards" });
-
-                if (tmpCards && tmpCards.length) {
-
-                    var tmpCardsLen = tmpCards.length;
-
-                    if (tmpCards && tmpCardsLen > 0) {
-
-                        for (var iPos = 0; iPos < tmpCardsLen; iPos++) {
-                            var tmpCardsEl = $(tmpCards[iPos]);
-                            var tmpIW = tmpCardsEl.innerWidth();
-                            var tmpMin = this.minCardSizeSm;
-                            //ToDo: Set cut off for small card sizing (xs?)
-                            // if (this.mode != "S") {
-                            //   tmpMin = this.minCardSize;
-                            // }
-                            //var tmpMax = this.maxCardSizeSm;
-                            // if (this.mode != "S") {
-                            //   tmpMax = this.maxCardSize;
-                            // }
-
-                            //--- ToDo: Move to element data if used
-                            //this.lastIW = tmpIW;
-
-                            var tmpEach = parseInt(tmpIW / tmpMin);
-                            tmpCardCount = tmpEach;
-                            if (tmpCardCount > 10) {
-                                tmpCardCount = 10;
-                            }
-
-
-
-
-                            if (tmpCardsEl && tmpCardsEl.is(":visible")) {
-                                var tmpCardEntryEls = tmpCardsEl.find('.card');
-
-                                //ToDo: Implement with cut off value
-                                // if (this.mode == 'S') {
-                                //   tmpCardEntryEls.css('max-width', this.maxCardSizeSm + 'px');
-                                // } else {
-                                //   tmpCardEntryEls.css('max-width', this.maxCardSize + 'px');
-                                // }
-                                //tmpCardEntryEls.css('max-width', this.maxCardSize + 'px');
-                                //end ToDo
-
-                                var tmpCurrCards = tmpCardEntryEls.length;
-
-                                var tmpMaxCards = tmpCurrCards;
-                                if (tmpCardCount > tmpMaxCards) {
-                                    tmpCardCount = tmpMaxCards;
-                                }
-
-                                //=== Example of a way to help with dangling single value
-                                //   if (tmpCurrCards == 4 && tmpCardCount == 3) {
-                                //     if (tmpIW < 800) {
-                                //       tmpCardCount = 2;
-                                //     } else {
-                                //       tmpCardCount = 4;
-                                //     }
-                                //   }
-
-                                var tmpToRemove = '';
-                                var tmpAttrVal = tmpCardsEl.attr('grid16-ccc');
-                                if (tmpAttrVal) {
-                                    tmpToRemove = tmpAttrVal;
-                                }
-                                //tmpCardsEl.data.currentCardCount = tmpCardCount;
-                                var tmpToAdd = this.numLookup[tmpCardCount];
-                                tmpCardsEl.attr('grid16-ccc', tmpToAdd);
-
-                                if (theForce || (tmpToRemove != tmpToAdd)) {
-                                    if (tmpToRemove) {
-                                        tmpCardsEl.removeClass(tmpToRemove);
-                                    }
-                                    if (tmpToAdd) {
-                                        tmpCardsEl.addClass(tmpToAdd);
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                }
                 //--- end layout resize
             } catch (ex) {
                 console.error("Error on refresh ", ex);
