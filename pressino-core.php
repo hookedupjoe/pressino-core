@@ -20,16 +20,16 @@
  *
  * Plugin Name: Pressino Core
  * Plugin URI: https://github.com/hookedupjoe/actionapp-wp
- * Description: An advanced development environment for WordPress.
+ * Description: Robust Web Application Development for WordPress.
  * Author: Joseph Francis
  * Author URI: https://www.hookedup.com
  * Donate-Link: https://www.hookedup.com/
  * Text Domain: actapp
  * License: GPLv3
  * 
- * Version: 2.0.1
+ * Version: 2.0.2
  */
-define( 'PRESSINO_PLUGIN_CORE_VERSION', '2.0.1' );
+define( 'PRESSINO_PLUGIN_CORE_VERSION', '2.0.2' );
 
 if ( !defined( 'ABSPATH' ) ) {
 	exit;
