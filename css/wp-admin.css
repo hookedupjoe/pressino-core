@@ -1,0 +1,7 @@
+html, body {
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+}
+
+#footer-thankyou {
+  display:none !important;
+}

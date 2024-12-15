@@ -1,0 +1,89 @@
+
+
+.block-editor-block-list__block .block-editor-url-input input[type=text], .block-editor-url-input input[type=text], .components-popover .block-editor-url-input input[type=text] {
+    width: 100%;
+    font-size: 13px;    
+}
+
+i.arrow:after {
+    z-index: auto;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.actapp-block-box.is-selected{
+    border:dashed 5px #767676;
+    min-height:80px !important;
+}
+
+.actapp-block-is-selected {
+    border:dashed 5px #767676;
+    min-height:80px !important;
+}
+
+.actapp-block-box {
+    border:dashed 3px gray !important;
+    min-height:30px !important;
+}
+
+/* .actapp-block-is-selected {
+    border:dashed 5px purple;
+    min-height:80px;
+} 
+.actapp-block-box {
+    border:dashed 3px gray !important;
+    min-height:30px !important;
+}
+    */
+
+.block-editor-block-list__layout {
+    min-height: 40px;
+}
+.actapp-be-drop-indicator {
+    /* border:dashed 2px blue !important; */
+    min-height:40px;
+}
+
+.toright .block-editor-button-block-appender.components-button.components-button {
+    padding: 4px;
+    background-color: #2185d0;
+    color: white;
+}
+
+
+.color-block-support-panel .block-editor-contrast-checker {
+    display:none;
+}
+
+
+[data-type="actappui/segment"] .block-list-appender {
+	position:relative;
+}
+[data-type="actappui/segment"] .block-list-appender .block-editor-button-block-appender {
+	position:relative;
+}
+
+[data-type="actappui/segment"] .ui.inverted .block-list-appender .block-editor-button-block-appender {
+	position:relative;
+    color: white;
+    border: solid 1px white;
+}
+
+[data-type="actappui/segment"] .ui.inverted  .block-editor-inserter__toggle.has-icon {
+	position:relative;
+    color: white;
+    border: solid 2px white;
+}
+
+
+
+[data-type="actappui/gridcolumn"] :where(.wp-block) {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    max-width: 840px
+}
+/* ToDo: Do this different once we find out how to disable in block*/
+/* .block-editor-block-inspector__advanced{
+    display:none;
+} */
+
