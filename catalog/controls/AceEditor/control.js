@@ -18,10 +18,10 @@ License: MIT
 
 	var ControlCode = {};
 
-	ControlCode.setParentEl = setParentEl;
-	function setParentEl(theParentEl) {
-		this.parentEl = theParentEl;
-	}
+	// ControlCode.setParentEl = setParentEl;
+	// function setParentEl(theParentEl) {
+	// 	this.parentEl = theParentEl;
+	// }
 	
 	ControlCode.resizeToParent = resizeToParent;
 	function resizeToParent(theParentEl) {
