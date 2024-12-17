@@ -1864,6 +1864,7 @@ window.ActionAppCore = window.ActionAppCore || ActionAppCore;
                 console.error("Can not go to tab, group and item are required.")
             }
         }
+        ThisApp.grid16.resizeLayoutProcess();
         ThisApp.publish('gotoTab', { group: tmpOptions.group, item: tmpOptions.item })
 
         return me;
