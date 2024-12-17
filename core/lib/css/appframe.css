@@ -31,6 +31,28 @@ body .ui.header>.ui.sub.header {
   color: unset !important;
 }
 
+.ui.labeled.east.icon.button, .ui.spaced.east.icon.button {
+  padding-right: 4.07142857em!important;
+  padding-left: 1.5em!important
+}
+
+.ui.labeled.east.icon.button>.icon {
+  left: auto;
+  right: 0;
+  border-radius: 0;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+  -webkit-box-shadow: 1px 0 0 0 transparent inset;
+  box-shadow: 1px 0 0 0 transparent inset;
+}
+
+.ui.labeled.icon.button.clear>.icon {
+  background-color: unset !important;
+}
+
+
+
+
 /* CARD UPDATES */
 
 .ui.one.cards {
