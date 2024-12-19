@@ -3380,11 +3380,9 @@ window.ActionAppCore = window.ActionAppCore || ActionAppCore;
 
         resizeLayoutProcess: function (theForce) {
             try {
-                //--- On layout resize ...
                 this.resizeGrid();
                 this.resizeAutoGrid();
                 this.resizeAutoGrid(theForce,'cards');
-                //--- end layout resize
             } catch (ex) {
                 console.error("Error on refresh ", ex);
             }
@@ -3400,6 +3398,9 @@ window.ActionAppCore = window.ActionAppCore || ActionAppCore;
             "gs-m": 8,
             "gs-l": 4
         },
+        processBreakPoints: function(){
+
+        },
         resizeAutoGrid: function (theForce, theType) {
             var tmpGridCount = 4;
             var tmpType = theType || 'grid';
@@ -3409,9 +3410,24 @@ window.ActionAppCore = window.ActionAppCore || ActionAppCore;
                 tmpClassToFind = 'card';
                 tmpRelatedClass = '';
             }
+            var tmpBaseClass = tmpType;
+            // if( tmpType == 'cards'){
+            //     tmpBaseClass = 'card';
+            // }
+
+            var tmpSubsToRemove = 0;
+            var tmpFirstProcessed = false;
 
             var tmpGrids = ThisApp.getByAttr$({ "auto-adapt": tmpType });
+            var tmpSubGrids = ThisApp.getByAttr$({ "auto-adapt": tmpType }, tmpGrids);
 
+            if( tmpSubGrids.length > 0 ){
+                tmpSubGrids.each(function( index ) {
+                    var tmpSubEntryEls =  $( this ).find('.' + tmpClassToFind);
+                    tmpSubsToRemove += tmpSubEntryEls.length;   
+                  })
+                  
+            }
             if (tmpGrids && tmpGrids.length) {
 
                 var tmpGridsLen = tmpGrids.length;
@@ -3431,17 +3447,15 @@ window.ActionAppCore = window.ActionAppCore || ActionAppCore;
                                 tmpGridCount = 10;
                             }
 
-                            var tmpGridEntryEls = tmpGridsEl.find('.' + tmpClassToFind);
-                            //ToDo: Implement with cut off value
-                            // if (this.mode == 'S') {
-                            //   tmpGridEntryEls.css('max-width', this.maxGridSizeSm + 'px');
-                            // } else {
-                            //   tmpGridEntryEls.css('max-width', this.maxGridSize + 'px');
-                            // }
-                            //tmpGridEntryEls.css('max-width', this.maxGridSize + 'px');
-                            //end ToDo
+                            var tmpGridEntryEls = tmpGridsEl.find('.' + tmpClassToFind).not('[auto-adapt]');
 
                             var tmpCurrGrids = tmpGridEntryEls.length;
+                            //--- Allowing one level of nesting as quick fix
+                            //ToDo: Recursively do this correctly for more than a level deep
+                            if(!tmpFirstProcessed){
+                                tmpFirstProcessed = true;
+                                tmpCurrGrids = tmpCurrGrids - tmpSubsToRemove;
+                            }
 
                             var tmpMaxGrids = tmpCurrGrids;
                             if (tmpGridCount > tmpMaxGrids) {
@@ -3451,6 +3465,8 @@ window.ActionAppCore = window.ActionAppCore || ActionAppCore;
                             if( tmpGridCount == 0 ){
                                 tmpGridCount = 1;
                             }
+                        
+                        
                             //--- Make it an option
                             //=== Example of a way to help with dangling single value
                             //   if (tmpCurrGrids == 4 && tmpGridCount == 3) {
@@ -3736,6 +3752,8 @@ window.ActionAppCore = window.ActionAppCore || ActionAppCore;
         }
 
         ActionAppCore.publish('app-loaded', [ThisApp]);
+
+        ThisApp.grid16.resizeLayoutProcess();
 
     }
 
