@@ -35,3 +35,7 @@ i.arrow:after {
     visibility: hidden;
 } */
   
+
+.block-editor-iframe__body {
+    padding:8px;
+}

@@ -68,10 +68,12 @@ class ActAppWidgetManager {
 			$tmpDepDefaults,
 			true
 		);
-		wp_enqueue_style ( 'aa-core-blocks_css' );
+		
 	}
 
-	
+	public static function actapp_init_block_assets($theHook) {
+		wp_enqueue_style ( 'aa-core-blocks_css' );
+	}
 	public static function actapp_init_blocks_content($theHook) {
 		$tmpConfig = array(
 			'baseURL'=> PRESSINO_PLUGIN_BLOCKS_URL,
@@ -113,11 +115,17 @@ class ActAppWidgetManager {
 	}
 	
 
+	
+	public static function actapp_init_blocks_assets($theHook) {
+		$my_css_ver = PRESSINO_PLUGIN_CORE_VERSION;
+		wp_register_style( 'aa-core-blocks_css',   PRESSINO_PLUGIN_BLOCKS_URL . '/css/wp-blocks.css', false,  $my_css_ver );
+		wp_enqueue_style ( 'aa-core-blocks_css' );
+
+	}
 	public static function actapp_init_blocks($theHook) {
 		
 	    $my_css_ver = '1';//Todo
 	
-		wp_register_style( 'aa-core-blocks_css',   PRESSINO_PLUGIN_BLOCKS_URL . '/css/wp-blocks.css', false,  $my_css_ver );
 		//--- Load the action app core components and ActionAppCore.common.blocks add on
 		wp_enqueue_script(
 			'actapp-blocks-editor', 
@@ -126,6 +134,7 @@ class ActAppWidgetManager {
 			true
 		);
 
+	
 
 		//,'richtext'
 		//--- Load standardly created widgets;
@@ -144,9 +153,10 @@ class ActAppWidgetManager {
 		add_filter('block_categories',  array('ActAppWidgetManager','actapp_block_category'), 10, 2);
 		add_action('enqueue_block_editor_assets',  array('ActAppWidgetManager','actapp_init_blocks_content'),10,2);
 		add_action('enqueue_block_editor_assets',  array('ActAppWidgetManager','actapp_init_blocks'),10,2);
-		add_action('wp_enqueue_block_style',  array('ActAppWidgetManager','actapp_init_blocks_css'),20,2);
+		add_action('enqueue_block_assets',  array('ActAppWidgetManager','actapp_init_blocks_css'),20,2);
 		add_action('wp_enqueue_block_style',  array('ActAppCommon','setup_scripts'),20,2);
-		add_action('enqueue_block_editor_assets',  array('ActAppCommon','setup_scripts'),20,2);
+		add_action('enqueue_block_assets',  array('ActAppCommon','setup_scripts'),20,2);
+		add_action('enqueue_block_assets',  array('ActAppWidgetManager','actapp_init_block_assets'),20,2);
 		
 		
 		add_action('wp_enqueue_scripts', array('ActAppCommon','setup_scripts'),20);

@@ -250,6 +250,12 @@ class ActAppDesigner {
 
 
 	
+	public static function actapp_init_block_assets($theHook) {
+
+		ActAppCommon::setup_scripts($theHook);
+		wp_enqueue_style('dashicons');
+
+	}
 
 	public static function actapp_init_blocks_content($theHook) {
 		$tmpConfig = array(
@@ -348,6 +354,8 @@ class ActAppDesigner {
 		add_action('admin_enqueue_scripts', array('ActAppCommon','setup_scripts'),10);
 		add_action('wp_enqueue_scripts', array('ActAppCommon','setup_scripts'),10);
 		add_action('wp_enqueue_block_style',  array('ActAppCommon','setup_scripts'),10,2);
+		add_action('enqueue_block_assets',  array('ActAppDesigner','actapp_init_block_assets'));
+		
 		add_action('enqueue_block_editor_assets',  array('ActAppCommon','setup_scripts'),10,2);
 	}
 
