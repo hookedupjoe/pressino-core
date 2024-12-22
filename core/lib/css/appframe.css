@@ -29,6 +29,7 @@ figure.ui {
 body .ui.header>.ui.sub.header {
   text-transform: none !important;
   color: unset !important;
+  margin-left:2px !important;
 }
 
 .ui.labeled.east.icon.button, .ui.spaced.east.icon.button {
