@@ -275,7 +275,7 @@ class ActAppDesigner {
 		wp_enqueue_script(
 			'actapp-designer', 
 			PRESSINO_PLUGIN_URL . '/js/DesignerDashboard.js',
-			array(),
+			array('wp-blocks','wp-editor','wp-element'),
 			true
 		);
 	}

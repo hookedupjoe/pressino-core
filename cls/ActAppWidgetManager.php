@@ -89,7 +89,7 @@ class ActAppWidgetManager {
 		wp_enqueue_script(
 			'actapp-blocks-controller', 
 			PRESSINO_PLUGIN_BLOCKS_URL . '/js/BlocksController.js',
-			array(),
+			array('wp-blocks','wp-editor','wp-element'),
 			true
 		);
 	}
