@@ -757,8 +757,66 @@ iframe.full-frame {
 }
 
 
-
 /* Augment Menu Items */
+
+
+.ui.header.mini{
+  font-size: 12px;
+}
+.ui.header.mini .sub.header{
+  font-size: 10px;
+}
+
+.ui.header.tiny{
+  font-size: 14px;
+}
+.ui.header.tiny .sub.header{
+  font-size: 12px;
+}
+
+.ui.header.small{
+  font-size: 16px;
+}
+.ui.header.small .sub.header{
+  font-size: 14px;
+}
+
+.ui.header.medium{
+  font-size: 19px;
+}
+.ui.header.medium .sub.header{
+  font-size: 16px;
+}
+
+
+.ui.header.large{
+  font-size: 25px;
+}
+.ui.header.large .sub.header{
+  font-size: 18px;
+}
+
+.ui.header.big{
+  font-size: 28px;
+}
+.ui.header.big .sub.header{
+  font-size: 22px;
+}
+
+.ui.header.huge{
+  font-size: 30px;
+}
+.ui.header.huge .sub.header{
+  font-size: 24px;
+}
+
+.ui.header.massive{
+  font-size: 35px;
+}
+.ui.header.massive .sub.header{
+  font-size: 20px;
+}
+
 
 .ui.tight.menu {
   min-height:25px;

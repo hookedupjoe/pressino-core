@@ -45,11 +45,7 @@ html {
 input[type="text"],
 input[type="email"],
 input[type="search"],
-input[type="password"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  /* mobile firefox too! */
-}
+
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 
@@ -7009,7 +7005,8 @@ h5.ui.header .sub.header {
 /*--------------
  Content Heading
 ---------------*/
-
+/* MOD */
+/* 
 .ui.huge.header {
   min-height: 1em;
   font-size: 2em;
@@ -7051,7 +7048,7 @@ h5.ui.header .sub.header {
 
 .ui.tiny.header .sub.header {
   font-size: 0.92857143rem;
-}
+} */
 
 /*--------------
    Sub Heading
@@ -7643,10 +7640,10 @@ a.ui.inverted.grey.header:hover {
 /*-------------------
         Sizing
 --------------------*/
-
-.ui.header:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+/* MOD */
+/* .ui.header:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
   font-size: 1.28571429em;
-}
+} */
 
 /*******************************
          Theme Overrides
