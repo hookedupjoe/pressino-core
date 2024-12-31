@@ -43,9 +43,6 @@ class ActAppCommon {
 		wp_register_style( 'semantic_css',    $tmplibloc . 'lib/semantic/dist/semantic.min.css', false,   $my_css_ver );
 		wp_enqueue_style ( 'semantic_css' );
 
-		wp_register_style( 'aa-appframe',    $tmplibloc . 'lib/css/appframe.css', false,   $my_css_ver );
-		wp_enqueue_style ( 'aa-appframe' );
-
 		wp_register_style( 'aa-resp-grid',    $tmplibloc . 'lib/css/resp-grid.css', false,   $my_css_ver );
 		wp_enqueue_style ( 'aa-resp-grid' );
 
@@ -57,6 +54,9 @@ class ActAppCommon {
 
 		wp_register_style( 'contextmenu_css',    $tmplibloc . 'lib/contextmenu/jquery.contextMenu.min.css', false,   $my_css_ver );
 		wp_enqueue_style ( 'contextmenu_css' );
+
+		wp_register_style( 'aa-appframe',    $tmplibloc . 'lib/css/appframe.css', false,   $my_css_ver );
+		wp_enqueue_style ( 'aa-appframe' );
 
 		wp_enqueue_script( 'support_libs', $tmplibloc . 'built-lib/support-libs.js', array(), $my_js_ver );
 		wp_enqueue_script( 'semantic_js', $tmplibloc . 'lib/semantic/dist/semantic.min.js', array(), $my_js_ver );

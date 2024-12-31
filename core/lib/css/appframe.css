@@ -2336,10 +2336,12 @@ position: inherit !important;
   width:auto !important;
 }
 
-.ui.segment, .ui.segments .segment {
+/* .ui.segment, .ui.segments .segment {
   font-size: 1.0rem;
+} */
+#page .ui.card.a {
+  text-decoration: none !important;
 }
-
 .med-boxed {
   min-height:400px;
 }

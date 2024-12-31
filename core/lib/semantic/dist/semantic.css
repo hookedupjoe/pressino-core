@@ -631,11 +631,11 @@ h5:last-child {
 /*******************************
              Text
 *******************************/
-
-p {
+/* MOD */
+/* p {
   margin: 0em 0em 1em;
   line-height: 1.4285em;
-}
+} */
 
 p:first-child {
   margin-top: 0em;
@@ -19278,10 +19278,17 @@ ol.ui.horizontal.list li:before,
   font-size: 0.92857143rem;
 }
 
-.ui.segments .segment,
+/* MOD */
+.ui.medium.segments .segment,
+.ui.medium.segment {
+  font-size: 0.92857143rem;
+}
+
+/* MOD */
+/* .ui.segments .segment,
 .ui.segment {
   font-size: 1rem;
-}
+} */
 
 .ui.large.segments .segment,
 .ui.large.segment {
