@@ -327,7 +327,7 @@
         for (key in tmpKeyList) {
   
           if (!data[key]) {
-            console.warn("no data for " + key);
+            //console.warn("no data for " + key);
           } else {
             if (data[key].toLowerCase && data[key].toLowerCase().indexOf(checkVal) > -1) {
               match = true;
