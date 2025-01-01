@@ -2504,3 +2504,41 @@ div.ui.message.floating {
 body.pushable.clearback {
   background-color: rgba(0, 0, 0, 0) !important;
 }
+
+/* FLO - Flow Outline*/
+.flo-wrap {
+  display: flex;  
+  flex-flow: row wrap;
+}
+
+.flo-wrap > * {
+  flex: 1 100%;
+}
+
+.flo-fit {
+  flex: 1 100%;
+}
+
+@media all and (min-width: 800px) {
+  .flo-10-1  { flex:1; }
+  .flo-10-2  { flex:2; }
+  .flo-10-3  { flex:3; }
+  .flo-10-4  { flex:4; }
+  .flo-10-5  { flex:5; }
+  .flo-10-6  { flex:6; }
+  .flo-10-7  { flex:7; }
+  .flo-10-8  { flex:8; }
+  .flo-10-9  { flex:9; }
+  .flo-10-10 { flex:10; }
+  .flo-side { order: 1; }
+  .flo-side-2 { order: 3;}
+}
+.flo-side { order: 3; }
+.flo-side-w { order: 1; }
+.flo-main    { order: 2; }
+.flo-side-e { order: 3;}
+
+/* Match up the bottom margin with side margin - removing extra footer space */
+.bootstrap-wrapper .row:last-child {
+  margin-bottom: -10px;
+}

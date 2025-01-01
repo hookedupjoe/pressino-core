@@ -27,9 +27,9 @@
  * Text Domain: actapp
  * License: GPLv3
  * 
- * Version: 2.0.7
+ * Version: 2.0.7a
  */
-define( 'PRESSINO_PLUGIN_CORE_VERSION', '2.0.7' );
+define( 'PRESSINO_PLUGIN_CORE_VERSION', '2.0.7a' );
 
 if ( !defined( 'ABSPATH' ) ) {
 	exit;
