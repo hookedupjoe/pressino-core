@@ -807,16 +807,53 @@ iframe.full-frame {
   font-size: 30px;
 }
 .ui.header.huge .sub.header{
-  font-size: 24px;
+  font-size: 25px;
 }
 
 .ui.header.massive{
   font-size: 35px;
 }
 .ui.header.massive .sub.header{
-  font-size: 20px;
+  font-size: 28px;
 }
 
+.ui.large.attached.header {
+  font-size: 25px;
+}
+
+.ui.huge.attached.header {
+  font-size: 30px;
+}
+
+.ui.massive.attached.header {
+  font-size: 35px;
+}
+
+
+.ui.tiny.block.header {
+  font-size: 14px;
+}
+
+.ui.small.block.header {
+  font-size: 16px;
+}
+
+.ui.medium.block.header {
+  font-size: 19px;
+}
+
+.ui.large.block.header {
+  font-size: 25px;
+}
+
+.ui.huge.block.header {
+  font-size: 30px;
+}
+
+.ui.massive.block.header {
+  font-size: 35px;
+}
+/*!
 
 .ui.tight.menu {
   min-height:25px;
