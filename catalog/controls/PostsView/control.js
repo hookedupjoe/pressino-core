@@ -50,6 +50,34 @@
                 "ctl": "button",
                 "toLeft": true,
                 "color": "blue",
+                "icon": "plus",
+                compact: true,
+                "name": "btn-page-tb-open-addmode",
+                "label": "Add",
+                "onClick": {
+                  "run": "action",
+                  "action": "openAddMode"
+  
+                }
+              },
+              {
+                "ctl": "button",
+                "toLeft": true,
+                "color": "blue",
+                "icon": "eye",
+                compact: true,
+                "name": "btn-page-tb-open-editmode",
+                "label": "Edit",
+                "onClick": {
+                  "run": "action",
+                  "action": "openEditMode"
+  
+                }
+              },
+              {
+                "ctl": "button",
+                "toLeft": true,
+                "color": "blue",
                 "icon": "trash",
                 compact: true,
                 "name": "btn-page-tb-recycle",
@@ -140,19 +168,41 @@
     // }
 
     ControlCode.setup = function(theOptions) {
-      var tmpPostType = theOptions.itemname || theOptions.name;
+      var tmpPostType = theOptions.itemname || theOptions.name || theOptions.posttype;
       var tmpIsTrash = theOptions.isTrash || false;
       var tmpIsDataView = theOptions.isDataView || false;
       var tmpDataViewName = '';
+
+      var tmpShowEdit = theOptions.showEdit || false;
+      var tmpShowAdd = theOptions.showAdd || false;
+
+      if( tmpShowAdd ){
+        var tmpAddURL = '';
+        if( typeof(tmpShowAdd) == 'string' ){
+          //--- url passed
+          tmpAddURL = tmpShowAdd;
+        } else {
+          tmpAddURL = '/wp-admin/post-new.php?post_type=' + tmpPostType;
+        }
+        tmpAddURL = ActionAppCore.ActAppWP.rootPath + tmpAddURL;
+        this.addURL = tmpAddURL;
+        this.addTabName = 'actapp-new-post-' + tmpPostType;
+        this.addTabTitle = theOptions.addTabTitle || 'New Post';
+      }
+     
+
+
+      this.setItemDisplay('btn-page-tb-open-editmode', tmpShowEdit);
+      this.setItemDisplay('btn-page-tb-open-addmode', !!(tmpShowAdd));
+      
 
       if( tmpIsDataView ){
         tmpDataViewName = theOptions.viewname || '';
       }
 
       isTrashView = tmpIsTrash;
-      //console.log('tmpIsDataView',tmpIsDataView,tmpDataViewName);
       this.posttype = tmpPostType;
-      window.tmpView = this;
+     
       this.setItemDisplay('btn-page-tb-untrash', isTrashView)
       if( isTrashView ){
         $(this.getItem('btn-page-tb-recycle').el).html('<i class="trash icon"></i> Trash It!')
@@ -214,8 +264,45 @@
         columns: tmpTableCols
       });
     };
-  
     
+     
+    ControlCode.openAddMode = function() {
+      // var tmpPostType = this.posttype;
+      // var tmpShowAdd = theOptions.showAdd || false;
+      // var tmpAddURL = '';
+      // if( typeof(tmpShowAdd) == 'string' ){
+      //   //--- url passed
+      //   tmpAddURL = tmpShowAdd;
+      // } else {
+      //   tmpAddURL = '/wp-admin/post-new.php?post_type=' + tmpPostType;
+      // }
+      // tmpAddURL = ActionAppCore.ActAppWP.rootPath + tmpAddURL;
+
+      this.publish('urlOpenRequest', [this,this.addURL,{name: this.addTabName, title:this.addTabTitle, icon: 'plus'}]);
+    };
+
+    ControlCode.openEditMode = function() {
+      var tmpViewer = this.getViewControl();
+      var tmpData = tmpViewer.mainTable.getSelectedData();
+      if( !(tmpData && tmpData.length == 1) ){
+        alert('Select one document to edit');
+        return;
+      }
+      var tmpDoc = tmpData[0];
+      var tmpID = tmpDoc['id'];
+      var tmpBaseURL = ActionAppCore.ActAppWP.rootPath;
+      var tmpURL = tmpBaseURL + '/wp-admin/post.php?post=' + tmpID + '&action=edit';
+     
+      console.log('tmpURL',tmpURL);
+
+      var tmpTitle = tmpDoc['__doctitle'] || 'Post: ' + tmpID;
+      var tmpIcon = 'pencil';
+      var tmpTabName = 'doc-edit-' + tmpID;
+
+      
+      //window.open(tmpURL,'_blank');
+      this.publish('urlOpenRequest', [this,tmpURL,{name: tmpTabName, title:tmpTitle, icon: tmpIcon}]);
+    };
     
     ControlCode.openDetails = function() {
       return this.openURL(true)
@@ -337,15 +424,17 @@
       var tmpNoneDisabled = (tmpViewer.counts.selected === 0);
       this.setItemDisabled('btn-page-tb-recycle',
         tmpNoneDisabled);
-        this.setItemDisabled('btn-page-tb-untrash',
+      this.setItemDisabled('btn-page-tb-untrash',
         tmpNoneDisabled);
   
       var tmpNotOneDisabled = (tmpViewer.counts.selected !== 1);
       this.setItemDisabled('btn-page-tb-open',
         tmpNotOneDisabled);
-        this.setItemDisabled('btn-page-tb-open-details',
+      this.setItemDisabled('btn-page-tb-open-details',
         tmpNotOneDisabled);
-        
+      this.setItemDisabled('btn-page-tb-open-editmode',
+          tmpNotOneDisabled);
+
     }
   
     var ThisControl = {

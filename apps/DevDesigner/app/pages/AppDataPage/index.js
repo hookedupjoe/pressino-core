@@ -186,6 +186,8 @@ var thisPageSpecs = {
             {
                 name:'actappelem',
                 title: 'Design Element Docs',
+                showEdit: true,
+                showAdd: '/wp-admin/post-new.php?post_type=actappelem',
                 showlink: true
             },
             {

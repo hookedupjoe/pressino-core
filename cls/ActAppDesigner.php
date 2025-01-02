@@ -626,7 +626,7 @@ class ActAppDesigner {
 		// 	remove_menu_page( 'index.php' );
 		// 	remove_menu_page( 'tools.php' );
 		// }
-		 //remove_menu_page( 'edit.php?post_type=actappelem' );
+		 remove_menu_page( 'edit.php?post_type=actappelem' );
 		 remove_menu_page( 'edit.php?post_type=actappdesign' );
 		 remove_menu_page( 'edit.php?post_type=actappdoc' );
 		 remove_menu_page( 'edit.php?post_type=actappdesigndoc' );
