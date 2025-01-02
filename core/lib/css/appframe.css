@@ -2599,3 +2599,49 @@ body.pushable.clearback {
 .bootstrap-wrapper .row:last-child {
   margin-bottom: -10px;
 }
+
+.ui.header > .icon {
+  font-size: 1.1em !important;
+}
+.ui.header.icon > .icon {
+  font-size: 2em !important;
+}
+.ui.header > .icon.itiny {
+  font-size: .7em !important;
+}
+.ui.header.icon > .icon.itiny {
+  font-size: 1.2em !important;
+}
+.ui.header > .icon.ismall {
+  font-size: .9em !important;
+}
+.ui.header.icon > .icon.ismall {
+  font-size: 1.6em !important;
+}
+.ui.header > .icon.imedium {
+  font-size: 1.3em !important;
+}
+.ui.header.icon > .icon.imedium {
+  font-size: 2.3em !important;
+}
+.ui.header > .icon.ilarge {
+  font-size: 1.5em !important;
+}
+.ui.header.icon > .icon.ilarge {
+  font-size: 3em !important;
+}
+.ui.header > .icon.ihuge {
+  font-size: 2em !important;
+}
+.ui.header.icon > .icon.ihuge {
+  font-size: 4em !important;
+}
+
+
+/* 
+.ui.header > .icon.ilarge {
+  font-size: 2em;
+}
+.icon.ixlarge {
+  font-size: 1.4em;
+} */
