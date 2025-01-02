@@ -2519,7 +2519,47 @@ body.pushable.clearback {
   flex: 1 100%;
 }
 
+
+.flo-main    { order: 2; }
+  
+@media all and (max-width: 799px) {
+  .flo-side-ne  { order: 1; }
+  .flo-side-nw  { order: 1; }
+  .flo-side-se  { order: 3; }
+  .flo-side-sw  { order: 3; }
+}
+
 @media all and (min-width: 800px) {
+  .flo-side-ne  { order: 3; }
+  .flo-side-nw  { order: 1; }
+  .flo-side-se  { order: 3; }
+  .flo-side-sw  { order: 1; }
+
+  .flo-side-ne  { margin-left: 10px;}
+  .flo-side-nw  { margin-right: 10px;}
+  .flo-side-se  { margin-left: 10px;}
+  .flo-side-sw  { margin-right: 10px;}
+
+  .flo-wrap.nospace .flo-side-ne  { margin-left: 0px;}
+  .flo-wrap.nospace .flo-side-nw  { margin-right: 0px;}
+  .flo-wrap.nospace .flo-side-se  { margin-left: 0px;}
+  .flo-wrap.nospace .flo-side-sw  { margin-right: 0px;}
+
+  .flo-wrap.slimspace .flo-side-ne  { margin-left: 5px;}
+  .flo-wrap.slimspace .flo-side-nw  { margin-right: 5px;}
+  .flo-wrap.slimspace .flo-side-se  { margin-left: 5px;}
+  .flo-wrap.slimspace .flo-side-sw  { margin-right: 5px;}
+
+  .flo-wrap.widespace .flo-side-ne  { margin-left: 15px;}
+  .flo-wrap.widespace .flo-side-nw  { margin-right: 15px;}
+  .flo-wrap.widespace .flo-side-se  { margin-left: 15px;}
+  .flo-wrap.widespace .flo-side-sw  { margin-right: 15px;}
+
+  .flo-wrap.xwidespace .flo-side-ne  { margin-left: 20px;}
+  .flo-wrap.xwidespace .flo-side-nw  { margin-right: 20px;}
+  .flo-wrap.xwidespace .flo-side-se  { margin-left: 20px;}
+  .flo-wrap.xwidespace .flo-side-sw  { margin-right: 20px;}
+
   .flo-10-1  { flex:1; }
   .flo-10-2  { flex:2; }
   .flo-10-3  { flex:3; }
@@ -2530,13 +2570,9 @@ body.pushable.clearback {
   .flo-10-8  { flex:8; }
   .flo-10-9  { flex:9; }
   .flo-10-10 { flex:10; }
-  .flo-side { order: 1; }
-  .flo-side-2 { order: 3;}
+
 }
-.flo-side { order: 3; }
-.flo-side-w { order: 1; }
-.flo-main    { order: 2; }
-.flo-side-e { order: 3;}
+
 
 /* Match up the bottom margin with side margin - removing extra footer space */
 .bootstrap-wrapper .row:last-child {
