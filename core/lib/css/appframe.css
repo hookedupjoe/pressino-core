@@ -37,6 +37,22 @@ body .ui.header>.ui.sub.header {
   padding-left: 1.5em!important
 }
 
+.ui.labeled.icon.button.iconlarge > .icon {
+  font-size: 1.4em !important;
+}
+
+.ui.labeled.icon.button.iconlarge {
+  padding-left: 5.07142857em!important;
+  padding-right: 1.5em!important;
+  line-height: 1.5em;
+}
+
+.ui.labeled.east.icon.button.iconlarge {
+  padding-right: 5.07142857em!important;
+  padding-left: 1.5em!important
+}
+
+
 .ui.labeled.east.icon.button>.icon {
   left: auto;
   right: 0;
