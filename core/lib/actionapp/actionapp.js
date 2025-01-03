@@ -3404,7 +3404,6 @@ window.ActionAppCore = window.ActionAppCore || ActionAppCore;
         },
         resizeAutoClass: function(){
             var tmpEls = ThisApp.getByAttr$({ "auto-adapt": "flatmobile" });
-            console.log('resizeAutoClass',tmpEls)
             var tmpW = $(window).width();
             var tmpClass = 'vertical';
             if( tmpW < 768 ){
