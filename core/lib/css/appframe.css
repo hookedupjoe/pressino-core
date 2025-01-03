@@ -2682,3 +2682,8 @@ body.pushable.clearback {
 .icon.ixlarge {
   font-size: 1.4em;
 } */
+
+.ui.menu.withicon:not(.labeled) .item:not(.icon)>.icon:not(.dropdown) {
+  margin-right: 10px;
+  opacity: 1;
+}
