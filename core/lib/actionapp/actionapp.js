@@ -3383,6 +3383,7 @@ window.ActionAppCore = window.ActionAppCore || ActionAppCore;
                 this.resizeGrid();
                 this.resizeAutoGrid();
                 this.resizeAutoGrid(theForce,'cards');
+                this.resizeAutoClass();
             } catch (ex) {
                 console.error("Error on refresh ", ex);
             }
@@ -3400,6 +3401,16 @@ window.ActionAppCore = window.ActionAppCore || ActionAppCore;
         },
         processBreakPoints: function(){
 
+        },
+        resizeAutoClass: function(){
+            var tmpEls = ThisApp.getByAttr$({ "auto-adapt": "flatmobile" });
+            console.log('resizeAutoClass',tmpEls)
+            var tmpW = $(window).width();
+            var tmpClass = 'vertical';
+            if( tmpW < 768 ){
+                tmpClass = 'horizontal';
+            }
+            tmpEls.removeClass('vertical').removeClass('horizontal').addClass(tmpClass);
         },
         resizeAutoGrid: function (theForce, theType) {
             var tmpGridCount = 4;
