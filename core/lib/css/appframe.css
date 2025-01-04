@@ -2352,25 +2352,31 @@ position: inherit !important;
 }
 
 
-@media only screen and (min-width: 449px) {
-  .mobileonlyp {
+
+@media only screen and (max-width: 450px) {
+  .nomobiles {
     display: none !important;
   }
 }
 
-@media only screen and (max-width: 450px) {
-  .nomobilep {
+@media only screen and (max-width: 767px) {
+  .nomobile {
     display: none !important;
   }
-}
-@media only screen and (min-width: 849px) {
-  .mobileonlyt {
+  .mobilehidden {
     display: none !important;
   }
 }
 
 @media only screen and (max-width: 850px) {
-  .nomobilet {
+  .nomobilew {
+    display: none !important;
+  }
+}
+
+
+@media only screen and (min-width: 449px) {
+  .mobileonlys {
     display: none !important;
   }
 }
@@ -2384,14 +2390,16 @@ position: inherit !important;
   }
 }
 
-@media only screen and (max-width: 767px) {
-  .nomobile {
-    display: none !important;
-  }
-  .mobilehidden {
+@media only screen and (min-width: 849px) {
+  .mobileonlyw {
     display: none !important;
   }
 }
+
+
+
+
+
 
 
 .ui.menu .item {
