@@ -2425,6 +2425,14 @@ position: inherit !important;
 #page .ui.card.a {
   text-decoration: none !important;
 }
+#page a:not(.ui) {
+  text-decoration: underline;
+}
+#page .link-basic a:not(.split):not(.ui), #page .link-circular a:not(.split):not(.ui), #page .link-squared a:not(.split):not(.ui) {
+  white-space: nowrap;
+  overflow:auto;
+}
+
 .med-boxed {
   min-height:400px;
 }
