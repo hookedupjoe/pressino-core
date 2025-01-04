@@ -2425,7 +2425,7 @@ position: inherit !important;
 #page .ui.card.a {
   text-decoration: none !important;
 }
-#page a:not(.ui) {
+#page a:not(.ui):not(.item) {
   text-decoration: underline;
 }
 #page .link-basic a:not(.split):not(.ui), #page .link-circular a:not(.split):not(.ui), #page .link-squared a:not(.split):not(.ui) {
