@@ -3403,10 +3403,25 @@ window.ActionAppCore = window.ActionAppCore || ActionAppCore;
 
         },
         resizeAutoClass: function(){
-            var tmpEls = ThisApp.getByAttr$({ "auto-adapt": "flatmobile" });
             var tmpW = $(window).width();
+
+            var tmpEls = ThisApp.getByAttr$({ "auto-adapt": "flatmobile" });
             var tmpClass = 'vertical';
             if( tmpW < 768 ){
+                tmpClass = 'horizontal';
+            }
+            tmpEls.removeClass('vertical').removeClass('horizontal').addClass(tmpClass);
+
+            var tmpEls = ThisApp.getByAttr$({ "auto-adapt": "flattablet" });
+            var tmpClass = 'vertical';
+            if( tmpW < 850 ){
+                tmpClass = 'horizontal';
+            }
+            tmpEls.removeClass('vertical').removeClass('horizontal').addClass(tmpClass);
+
+            var tmpEls = ThisApp.getByAttr$({ "auto-adapt": "flatphone" });
+            var tmpClass = 'vertical';
+            if( tmpW < 500 ){
                 tmpClass = 'horizontal';
             }
             tmpEls.removeClass('vertical').removeClass('horizontal').addClass(tmpClass);
