@@ -35,7 +35,14 @@ i.arrow:after {
     visibility: hidden;
 } */
   
-
+/* 
 .block-editor-iframe__body {
     padding:8px;
+} */
+
+
+/* This is a fix for the Social Media control, among others, 
+that show too small of a space to enter values */
+.block-editor-url-popover .components-input-control__container {
+    min-width:300px;
 }
