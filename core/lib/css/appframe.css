@@ -2396,9 +2396,60 @@ position: inherit !important;
   }
 }
 
+.ui.segment.inset.slimspace {
+  border:inset 1px;
+}
+.ui.segment.inset {
+  border:inset 2px;
+}
+.ui.segment.inset.widespace {
+  border:inset 3px;
+}
+
+.ui.segment.bordered.blue {
+  border-color: #2185d0 !important;
+}
+.ui.segment.bordered.orange {
+ border-color: #cf590c !important;
+}
+.ui.segment.bordered.green {
+ border-color: #198f35 !important;
+}
+.ui.segment.bordered.purple {
+ border-color: #82299f !important;
+}
+.ui.segment.bordered.violet {
+ border-color: #502aa1 !important;
+}
+.ui.segment.bordered.red {
+ border-color: #b21e1e !important;
+}
+.ui.segment.bordered.brown {
+ border-color: #975b33 !important;
+}
+.ui.segment.bordered.yellow {
+ border-color: #cd9903 !important;
+}
+.ui.segment.bordered.olive {
+ border-color: #8d9e13 !important;
+}
+.ui.segment.bordered.teal {
+ border-color: #00827c !important;
+}
+.ui.segment.bordered.pink {
+ border-color: #c71f7e !important;
+}
 
 
-
+.ui.segment.bordered {
+  border:solid 2px;
+}
+.ui.segment.bordered.widespace {
+  border:solid 3px;
+}
+.ui.segment.bordered.slimspace {
+  border:solid 1px;
+}
 
 
 
