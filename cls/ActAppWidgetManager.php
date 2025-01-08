@@ -57,7 +57,7 @@ class ActAppWidgetManager {
 	
 	public static function loadStandardBlock($theName, $theFileName = '', $theDependencies = null){
 		$tmpDepDefaults = array('wp-blocks','wp-editor','wp-element');
-		//$tmpDeps = array_combine($tmpDepDefaults, $theDependencies);
+		
 		$tmpFN = $theFileName;
 		if( $tmpFN == ''){
 			$tmpFN = $theName;
@@ -136,12 +136,14 @@ class ActAppWidgetManager {
 
 	
 
-		//,'richtext'
-		//--- Load standardly created widgets;
-		$tmpWidgetList =  self::get_custom_widget_list();
-		//ToAdd _. , 'buttons'
-		foreach ($tmpWidgetList as $aName) {
-			self::loadStandardBlock($aName);
+		$current_user = wp_get_current_user();
+		if ( in_array( 'administrator', $current_user->roles ) ) {
+			//--- Load standardly created widgets for admins only;
+			//--- These are custom / to be deprecated JS based controls for dev use
+			$tmpWidgetList =  self::get_custom_widget_list();
+			foreach ($tmpWidgetList as $aName) {
+				self::loadStandardBlock($aName);
+			}
 		}
 			
 	}
