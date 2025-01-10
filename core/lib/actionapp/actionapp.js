@@ -3384,13 +3384,14 @@ window.ActionAppCore = window.ActionAppCore || ActionAppCore;
                 this.resizeAutoGrid();
                 this.resizeAutoGrid(theForce,'cards');
                 this.resizeAutoClass();
+                this.processStackables();
             } catch (ex) {
                 console.error("Error on refresh ", ex);
             }
         },
 
         sep_cards: "-----------------------------",
-
+        defaultStackPoint: 450,
         numLookup: ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen"],
         paramDefaults: {
             "gs-s-at": 330,
@@ -3400,6 +3401,30 @@ window.ActionAppCore = window.ActionAppCore || ActionAppCore;
             "gs-l": 4
         },
         processBreakPoints: function(){
+
+        },
+        processStackables: function(){
+            var tmpEls = ThisApp.getByAttr$({ "auto-adapt": "stackable" });
+            var self = this;
+            tmpEls.each( function(theIndex, theEl){
+                var tmpEl = $(theEl);
+                var tmpCheck = tmpEl.attr('stackat') || self.defaultStackPoint;
+                var tmpAtEl = tmpEl.parent();
+                var tmpW = tmpAtEl.width();
+             
+
+                tmpEl[tmpW < tmpCheck ? 'addClass' : 'removeClass']('stacked');
+
+                // if( tmpW < 450 ){
+                //     theEl.addClass('stacked');
+                // } else {
+                //     theEl.removeClass('stacked');
+                // }
+                
+
+                console.log('tmpAtEl',tmpAtEl.width());
+            } )
+            
 
         },
         resizeAutoClass: function(){
